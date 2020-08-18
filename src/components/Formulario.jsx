@@ -1,13 +1,6 @@
 import React, { useState } from 'react';
 import Error from './Error';
-const Formulario = () => {
-	// state del formulario
-
-	const [busqueda, setBusqueda] = useState({
-		ciudad: '',
-		pais: '',
-	});
-
+const Formulario = ({ busqueda, setBusqueda, setConsultar }) => {
 	// extraer ciudad y país
 	const { ciudad, pais } = busqueda;
 
@@ -33,6 +26,7 @@ const Formulario = () => {
 		}
 
 		setError(false);
+		setConsultar(true);
 
 		// Pasar al componente principal
 	};
